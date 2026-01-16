@@ -1,0 +1,137 @@
+:root {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --gray: #666;
+    --pad: 4vw;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between;
+    padding: 35px var(--pad);
+    z-index: 1000;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    mix-blend-mode: difference;
+}
+.nav-email { color: white; text-decoration: none; letter-spacing: 1px; }
+
+/* HERO - Enhanced Minimalist Layout */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--pad);
+}
+
+.hero-wrapper {
+    display: inline-block;
+    width: fit-content;
+}
+
+.hero-meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.hero-meta span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gray);
+}
+
+h1 {
+    font-size: clamp(3rem, 12.1vw, 15rem);
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin: 0;
+}
+
+.hero-skills {
+    width: 100%;
+    margin-top: 15px;
+    padding: 0 4px;
+    text-align: right; /* Aligned to the right for a Swiss-style offset */
+}
+
+.hero-skills span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+}
+
+/* Projects Section (unchanged style, updated content) */
+.projects { padding: 0 var(--pad); }
+
+.project {
+    padding: 100px 0;
+    border-top: 1px solid #222;
+}
+
+.project-header {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--gray);
+    margin-bottom: 25px; text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-center-box { width: 100%; display: flex; justify-content: center; }
+.story-item-single {
+    width: 100%; max-width: 45vh; aspect-ratio: 9 / 16;
+    background: #111; overflow: hidden;
+}
+
+.media-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.media-item { aspect-ratio: 4 / 5; background: #111; overflow: hidden; }
+
+.video-wrapper {
+    position: relative; width: 100%; padding-bottom: 56.25%;
+    height: 0; background: #000;
+}
+.video-wrapper iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+video, img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.project-description { margin-top: 40px; max-width: 650px; }
+.project-description h2 { font-size: 24px; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; }
+.project-description p { font-size: 16px; color: var(--gray); line-height: 1.6; }
+
+/* Footer */
+.footer { padding: 120px var(--pad) 60px; text-align: center; border-top: 1px solid #222; }
+.big-email {
+    font-size: clamp(2rem, 10vw, 8rem);
+    color: white; text-decoration: none; font-weight: 900;
+    display: block; margin: 40px 0; letter-spacing: -0.03em;
+}
+.footer-meta { display: flex; justify-content: space-between; color: var(--gray); font-size: 11px; text-transform: uppercase; }
+
+/* Reveal Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .media-grid { grid-template-columns: 1fr; }
+    .hero-meta, .hero-skills { text-align: left; align-items: flex-start; }
+    .story-item-single { max-width: 100%; }
+}
